@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+       <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="index.js"></script>
+    </head>
+    <body>
+      <!-- <h1>OOP(Object-Oriented Programming)</h1>
+        <p>ობიექტზე ორიენტირებული პროგრამირება,არის პროგრამირების სტილი,სადაც მონაცემები და მათზე მოქმედი ფუნქციები ერთ ობიექტში ერთიანდება
+        
+         Javascript-ში OOP-ის მთავარი იდეაა,რომ შევქმნათ ობიექტების შაბლონი(class)და ამ შაბლონის მიხედვით მრავალი ობიექტი ავაგოთ.
+        </p>
+
+         <h1>რატომ გამოიყენება OOP</h1>
+         <p>წარმოვიდგინოთ,რომ მანქანების პროგრამას ვწერთ. თუ 100 მანქანა გვყავს,არ არის მოსახერხებელი თითოეული ცვლადის შექმნა:
+         <br>
+         const car1 = {<br>
+            brand: "BMW"<br>
+            year: 2022<br>
+         };<br>
+         <br>
+         const car2 = {<br>
+            brand: "Mercedes",<br>
+            year: 2021<br>
+         };<br>
+          <br>
+         კარგი გზა არის კლასის შექმნა.<br>
+             class Car {<br>
+             constructor(brand,year){<br>
+             this.brand = brand;<br>
+             this.year = year;<br>
+             }<br>
+             }<br>
+           შემდეგ ამ კლასის მიხედვით ობიექტებს ვქმნით:<br>
+           const car1 = new Car("BMW",2022);<br>
+           const car2 = new Car("Mercedes",2021);<br>
+            <br>
+           console.log(car1);<br>
+           console.log(car2);
+    </p>
+   
+
+    <p>
+      <h1>1. class</h1>
+      <strong>class</strong> არის შაბლონი,რომლის მიხედვითაც ობიექტები იქმნება.
+       <br>
+       class Person{<br>
+
+       }<br>
+       ჯერ ამ კლასში არაფერია.<br>
+
+       <h1>2. constructor</h1>
+       constructor() არის სპეციალური ფუნქცია,რომლის ავტომატურად გაეშვება <br>ახალი ობიექტის შექმნისას
+       <br>
+       class Person {<br>
+         constructor(name, age){<br>
+            this.name = name;<br>
+            this.name = age;<br>
+         }<br>
+       }<br>
+       <br>
+       აქ: <br>
+       name და age პარამეტრებია<br>
+       this.name და this.age ობიექტების თვისებები(properties)ხდება<br>
+
+       <h1>ობიექტის შექმნა</h1>
+       const person1 =new Person("Ana", 20);<br>
+       console.log(person1);<br>
+
+       <strong>შედეგი</strong><br>
+         {<br>
+            name: "Ana",
+            age:  20<br>
+         }
+         <br>
+      <strong>კიდევ:</strong><br>
+       const person2 = new Person("Nika",25);<br>
+       console.log(person2.name);<br>
+        <strong>შედეგი:</strong>
+
+        <h1>მეთოდები (Methods)</h1>
+        კლასში შეგვიძლია ფუნქციებიც გვქონდეს<br>
+        class Person{<br>
+          constructor(name,age)<br>
+           this.name = name;<br>
+           this.name = age; <br>
+
+           sayHello(){<br>
+           console.log("გამარჯობა, მე ვარ" + this.name);<br>
+           }<br>
+        }
+        
+        ობიექტის შექმნა:<br>
+        const person1 = new Person("Ana", 20);<br>
+        person1.sayHello();<br>
+        შედეგი:<br>
+        გამარჯობა, მე ვარ Ana<br>
+
+        <h1>რამდენიმე ობიექტი ერთი კლასიდან</h1><br>
+          class Person{<br>
+            constructor(name, age){<br>
+               this.name = name;<br>
+               this.age = age;<br>
+            }<br>
+
+            sayHello(){<br>
+               console.log("მე ვარ" + this.name);<br>
+            }<br>
+          }<br>
+          const user1 = new Person('Ana', 20);<br>
+          const user2 = new Person('Nika',25);<br>
+          const user3 = new Person('Luka',18);<br>
+
+          user1.sayHello();<br>
+          user2.sayHello();<br>
+          user3.sayHello();<br>
+
+          <h1>this</h1><br>
+          <strong>this</strong>მიუთითებს იმ ობიექტზე,რომელმაც მეთოდი გამოიძახა.<br>
+          class Person{<br>
+            constructor(name){<br>
+               this.name = name;<br>
+            }<br>
+
+            showName(){<br>
+               console.log(this.name);<br>
+            }<br>
+          }<br>
+         const user1 = new Person("Ana");<br>
+         const user2 = new Person("Nika");<br>
+
+         user1.showName();//Ana<br>
+         user2.showName();//Nika<br>
+
+         როცა:<br>
+         user1.showName();<br>
+
+         this ნიშნავს user1-ს<br>
+    </p>
+
+    <p>
+       <h1>OOP-ის ოთხი მთავარი პრინციპი:</h1><br>
+          <h2>1.Encapsulation (ინკაფსულაცია)</h2><br>
+
+          მონაცემების და ფუნქციების ერთ ობიექტში გაერთიანება<br>
+          class Car {<br>
+            constructor(brand){<br>
+               this.brand = brand;<br>
+            }<br>
+            showBrand(){<br>
+               console.log(this.brand);<br>
+            }<br>
+          }<br>
+
+        <h1>Inheritance(მემკვიდრეობა)</h1>
+        <h3>ერთი კლასი მეორე კლასის თვისებებს და მეთოდებს იღებს</h3>
+
+        class Animal{<br>
+         speak(){<br>
+            console.log("ხმას გამოსცემს");<br>
+         }<br>
+        }<br>
+        class Dog extends Animal{<br>
+         
+      }<br>
+        dog.speak();
+      
+        <h1>Polymorphism(პოლიმორფიზმი)</h1>
+        <strong>ერთსა და იმავე მეთოდს სხვადასხვა კლასში განსხვავებული მოქმედება შეიძლება ჰქონდეს.</strong><br>
+
+       class Animal {<br>
+         sound(){<br>
+            console.log("ზოგადი ხმა");<br>
+         }<br>
+       }<br>
+        
+       class Dog extends Animal {<br>
+         sound(){<br>
+            console.log("Woof");<br>
+         }<br>
+       }<br>
+ 
+       class Cat extends Animal{<br>
+         sound(){<br>
+            console.log("Meow");<br>
+         }<br>
+       }<br>
+
+       const dog = new Dog();<br>
+       const cat = new Cat();<br>
+       <br>
+       dog.sound();<br>
+       cat.sound();<br>
+        
+
+       <h1>Abstraction(აბსტრაქცია)</h1>
+       <strong>მომხმარებელი მხოლოდ საჭირო ნაწილს ხედავს და შიდა დეტალები დამალულია</strong><br>
+
+       const date = new Date();<br>
+
+       console.log(date.getFullYear());<br>
+        
+        <strong>ჩვენ უბრალოდ getFullYear()-ს ვიყენებთ,მაგრამ შიგნით როგორ მუშაობს,ამის ცოდნა არ გჭირდება.</strong><br>
+
+        OOP-ის სწავლა შემდეგი თანმიმდევრობით:<br>
+
+         ობიექტები ({})<br>
+         class      <br>
+         constructor<br>
+         this       <br>
+         მეთოდები  <br>
+         new        <br>
+         inheritance (extends, super)<br>
+         პოლიმორფიზმი    <br>
+    </p>--->
+    </body>
+</html>
