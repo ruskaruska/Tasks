@@ -39,11 +39,22 @@ console.log(person.interests.indexOf("sport"));
 //მაქვს person object-ი რომელსაც თავის სტრუქტურა აქვს და მინდა რომ სერვერს გავუგზავნო და ინფორმაცია სადღაც ჩავწეროთ  და ობიექტს ხომ ვერსად ვერ გავაგზავნით, იმიტომ ვერ გავაგზავნით რომ ობიექტი არის ჩემი კომპიუტერის მეხსიერებაში შენახული როგორც მნიშვნელობა და მე ამის გაგზავნა არსად არ შემიძლია. 
 
 //შემიძლია გადავაქციო სტრინგად და JavaScript-ში ასეთ სტრინგს რომელსაც მნიშვნელობის გადაქცევა სტრინგად რომ შეგიძლია და თავის მნიშვნელობის სტრუქტურასაც რომ ინარჩუნებს ასეთ სტრინგს  JSON ქვია (JavaScript Object Notation).
+JSON.stringify(person);//ტექსტად გადააქცევს
 //JSON.stringify გვიბრუნებს ტექსტს, მე შემიძლია ეხლა გადავცე person და დამიბრუნებს სტრინგს ანუ ტექსტს დამიბრუნებს,რომელშიც person-ის სტრუქტურაა აღწერილი,და მე თუ მინდა 
 //შემიძლია ეს string-ი გავაგზავნო სადაც მინდა
 //ასევე შეიძლება მომივიდეს საიდანღაც,სერვერიდან მაგალითად და ამ სტრინგს ვერაფერს ვერ ვუზამ მისი დამუშავება ცემთვის ძაან ძნელი იქნება,მაგალითად თუ მომინდება name-ის ამოღება ვერ ამოვიღებთ ამისთვის JSON-ს აქვს JSON.parse
-JSON.stringify(person);
-console.log(person);
 
+
+let text ='{"name":"John","surName":"Johnas","age":30,"children":{"alexander":{"name":"Alexander","age":5},"tinatini":{"name":"Tinatin","age":11}},"interests":["tax eveasion","politics","education","sport","football"],"married":true,"friends":[{"name":"Elchin","age":34},{"name":"Lana","age":30},{"name":"Sandra","age":36,"height":175}]}'
 //და შემეძლება სტრინგი ისევ ობიექტად გადავაქციო:
 let parsedPerson = JSON.parse(text);
+
+const target = { a: 1, b: 2 };
+//const source = { b: 4, c: 5 };
+
+const returnedTarget = Object.assign(target);
+
+console.log(returnedTarget);//{ a: 1, b: 2 }
+
+let newTarget = {...target};
+console.log(newTarget);
